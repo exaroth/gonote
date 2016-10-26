@@ -45,7 +45,7 @@ wget -O gonote https://github.com/exaroth/gonote/releases/download/0.1.0/gonote-
 
 - **Editing existing note**
 
-`gonote edit <note_id>` - Edit not with given note id.
+`gonote edit <note_id>` - Edit note with given note id.
 
 - **Fetching note**
 
