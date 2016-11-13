@@ -269,10 +269,6 @@ func (s *simpleNoteClient) showNotes(notes Notes) {
 			parsed = append(parsed, s.parseNote(&n, true))
 		}
 	}
-	if len(parsed) == 0 {
-		fmt.Printf(noteListBody, 0, s.Cfg.Email, "No Notes")
-		return
-	}
 	if s.Params.Flags["n"] != "-1" {
 		n, err := strconv.Atoi(s.Params.Flags["n"])
 		if err != nil {
