@@ -27,7 +27,7 @@ wget -O gonote https://github.com/exaroth/gonote/releases/download/0.1.0/gonote-
 
 - **Creating notes**
 
-`gonote` - Will open external editor (by default vim) allowing you to create new note.
+`gonote` - Will open external editor (set in `$EDITOR` environment variable) allowing you to create new note.
 
 `gonote @sometag @anothertag` - Same as above but will also attach @sometag and @anothertag to the note.
 
@@ -57,11 +57,10 @@ wget -O gonote https://github.com/exaroth/gonote/releases/download/0.1.0/gonote-
 
 `gonote delete <note_id> --permanently` - Will permanently delete a note.
 
-### Configuration file
+### Configuration
 You can find configuration file in ~/.gonote.json.
 Available options are:
 - `email` - SimpleNote email.
 - `password` - SimpleNote password.
-- `editor` - Editor to use (vim by default).
 - `markdown` - Whether to set markdown flag when uploading notes.
 
