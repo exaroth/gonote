@@ -15,7 +15,6 @@ import (
 const (
 	defaultConfigFilename = ".gonote.json"
 	defaultMarkdownOption = true
-	defaultEditorOption   = "vim"
 )
 
 // Main configuration interface used to interact with configuration file.
@@ -36,7 +35,6 @@ type UserConfigFile struct {
 	Email    string `json:"email"`
 	Password string `json:"password"`
 	Markdown bool   `json:"markdown"`
-	Editor   string `json:"editor"`
 }
 
 // Return new configation instance.
@@ -46,7 +44,6 @@ func NewConfigFile() MainConfig {
 		Path: path.Join(usr.HomeDir, defaultConfigFilename),
 		UserCfg: &UserConfigFile{
 			Markdown: defaultMarkdownOption,
-			Editor:   defaultEditorOption,
 		},
 	}
 }
@@ -103,7 +100,6 @@ func (c *mainConfig) create() (err error) {
 	fmt.Println("Enter SimpleNote password:")
 	c.UserCfg.Password, err = reader.ReadString('\n')
 	c.UserCfg.Password = strings.TrimSpace(c.UserCfg.Password)
-	c.UserCfg.Editor = defaultEditorOption
 	if err != nil {
 		return
 	}
