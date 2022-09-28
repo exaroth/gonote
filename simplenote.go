@@ -167,7 +167,7 @@ func (s *simpleNoteClient) editNote() (err error) {
 		Key: s.Params.Key,
 	}
 	note := s.fetchNote(n)
-	updatedContent, err := WriteToFile(note.Content, s.Cfg.Editor)
+	updatedContent, err := WriteToFile(note.Content)
 	if err != nil {
 		return err
 	}

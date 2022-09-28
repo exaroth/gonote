@@ -177,7 +177,7 @@ func (c *commandLineParser) parse(args []string) (err error) {
 		if len(flagless) > 0 {
 			c.Params.Content = strings.Join(flagless, " ")
 		} else {
-			content, err := WriteToFile("", c.config.Editor)
+			content, err := WriteToFile("")
 			if err != nil {
 				return err
 			}

@@ -13,6 +13,9 @@ import (
 
 var Version = "0.1.0"
 
+// Default editor to be used if for some reason $EDITOR env variable is not set
+const defaultEditor = "vim"
+
 // List current GoNote version.
 func ListVersion() string {
 	return fmt.Sprintf("GoNote Ver.%s", Version)
@@ -71,8 +74,12 @@ func ParseTags(tags []string) (tagString string) {
 }
 
 // writeToFile opens external editor with predetermined temporary file
-// after editor is closed reads data from the file and deletes it.
-func WriteToFile(prevContent, editor string) (content string, err error) {
+// after editor is closed reads data from the temp file and deletes it.
+func WriteToFile(prevContent string) (content string, err error) {
+	editor := os.Getenv("EDITOR")
+	if editor == "" {
+		editor = defaultEditor
+	}
 	fpath := path.Join(os.TempDir(), GenerateRandomHandle())
 	f, err := os.Create(fpath)
 	if err != nil {
