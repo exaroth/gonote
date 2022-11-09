@@ -11,7 +11,7 @@ import (
 	"time"
 )
 
-var Version = "0.1.0"
+var Version = "0.2.0"
 
 // Default editor to be used if for some reason $EDITOR env variable is not set
 const defaultEditor = "vim"
