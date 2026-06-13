@@ -1,3 +1,7 @@
+> [!NOTE]
+> SimpleNote has restricted API access making any 3rd party implementations unusable. This repository hence is for now abandoned.
+
+
 ## GoNote - Terminal client for SimpleNote
 
 GoNote is a simple utility for managing notes in your SimpleNote account. It allows basic operations like creating new notes - either by using external editor, piping file contents or just passing text in command line, as well as listing, editing and deleting them. I'm probably one of many developers who use terminal on a daily basis and, in time leaving it just to save some text for later became a nuisance. At the same time I like having all my notes available on my phone or in the browser, just in case I don't have my computer with me. SimpleNote is a service which focuses on having very straightforward and transparent way of managing your notes, at the same time allowing access to your account from mobile devices and web - thus the reason for choosing it as a storage backend for this utility.
@@ -63,4 +67,3 @@ Available options are:
 - `email` - SimpleNote email.
 - `password` - SimpleNote password.
 - `markdown` - Whether to set markdown flag when uploading notes.
-
